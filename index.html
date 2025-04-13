@@ -55,13 +55,14 @@
 
       @font-face {
         font-family: "Nunito";
-        src: url("fonts/NunitoSans_7pt_Condensed-Regular.ttf")
+        src: url("https://ahmedgamalemam.github.io/b2c-login-page/fonts/NunitoSans_7pt_Condensed-Regular.ttf")
           format("truetype");
       }
 
       @font-face {
         font-family: "Urbanist";
-        src: url("fonts/Urbanist-Black.ttf") format("truetype");
+        src: url("https://ahmedgamalemam.github.io/b2c-login-page/fonts/Urbanist-Black.ttf")
+          format("truetype");
       }
 
       /* ////////////////////////////////////////////////////////////////////// */
@@ -153,12 +154,19 @@
 
   <body>
     <main class="main-login d-flex align-items-center back-color-EDF7FF">
-      <img src="images/loginbackground.png" alt="login background" />
+      <img
+        src="https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground.png"
+        alt="login background"
+      />
 
       <section
         class="d-flex flex-column align-items-center back-color-light rounded-3 p"
       >
-        <img class="mb-3" src="images/AgencyLogo.png" alt="logo" />
+        <img
+          class="mb-3"
+          src="https://ahmedgamalemam.github.io/b2c-login-page/images/AgencyLogo.png"
+          alt="logo"
+        />
 
         <div class="mb-4">
           <h3 class="color-blue-dark">Welcome</h3>
@@ -179,7 +187,10 @@
               for="username"
               class="form-login-label d-flex align-items-center"
             >
-              <img src="images/username.png" alt="username image" />
+              <img
+                src="https://ahmedgamalemam.github.io/b2c-login-page/images/username.png"
+                alt="username image"
+              />
               <p>User name</p>
             </label>
           </div>
@@ -197,7 +208,10 @@
               for="password"
               class="form-login-label d-flex align-items-center"
             >
-              <img src="images/passwordimg.png" alt="password image" />
+              <img
+                src="https://ahmedgamalemam.github.io/b2c-login-page/images/passwordimg.png"
+                alt="password image"
+              />
               <p>Password</p>
             </label>
           </div>
@@ -215,13 +229,34 @@
 
     <!-- scripts -->
 
-    <script src="https://alcdn.msauth.net/lib/1.0.0/js/msal.js"></script>
+    <!-- <script src="https://alcdn.msauth.net/lib/1.0.0/js/msal.js"></script>
     <script>
       // Required to initialize the page for Azure B2C
       document.addEventListener("DOMContentLoaded", function () {
         if (typeof PageLoaded === "function") {
           PageLoaded();
         }
+      });
+    </script> -->
+
+    <script src="https://alcdn.msauth.net/lib/1.0.0/js/msal.js"></script>
+    <script type="text/javascript">
+      // Azure injects a global object `Login` in built-in flows.
+      // Example: map inputs to Azure's expected model
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.querySelector("form");
+        loginForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          // Send values to Azure via callback
+          Login.submit({
+            login: email,
+            password: password,
+          });
+        });
       });
     </script>
   </body>
