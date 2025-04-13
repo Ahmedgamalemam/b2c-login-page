@@ -43,6 +43,7 @@
       }
 
       input[type="email"],
+      input[type="text"],
       input[type="password"] {
         width: 100%;
         padding: 8px;
@@ -51,6 +52,7 @@
         background: #edf7ff;
         margin-bottom: 1.5rem;
       }
+      input[type="text"]:focus,
       input[type="email"]:focus,
       input[type="password"]:focus {
         border: none;
@@ -135,6 +137,8 @@
 
       .entry-item:has(input[type="text"]:valid) > label[for="email"],
       .entry-item:has(input[type="text"]:focus) > label[for="email"],
+      .entry-item:has(input[type="email"]:valid) > label[for="email"],
+      .entry-item:has(input[type="email"]:focus) > label[for="email"],
       .entry-item:has(input[type="password"]:valid)
         > div
         > label[for="password"],
