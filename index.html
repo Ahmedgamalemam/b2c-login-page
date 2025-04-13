@@ -112,7 +112,7 @@
         }
       }
 
-      label {
+      .entry-item label {
         position: absolute;
         font-size: 0.875rem;
         background-color: transparent;
@@ -137,6 +137,10 @@
 
       .entry-item:has(input[type="text"]:valid) > label[for="email"],
       .entry-item:has(input[type="text"]:focus) > label[for="email"],
+      .entry-item:has(input[type="text"]:not(:placeholder-shown))
+        > label[for="email"],
+      .entry-item:has(input[type="email"]:not(:placeholder-shown))
+        > label[for="email"],
       .entry-item:has(input[type="email"]:valid) > label[for="email"],
       .entry-item:has(input[type="email"]:focus) > label[for="email"],
       .entry-item:has(input[type="password"]:valid)
