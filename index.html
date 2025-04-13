@@ -12,10 +12,6 @@
         overflow-x: hidden;
       }
 
-      .intro {
-        display: none !important;
-      }
-
       button {
         border: none;
         font-family: Urbanist !important;
@@ -58,7 +54,11 @@
         border: none;
         outline: none;
       }
-
+      input[type="text"]::placeholder,
+      input[type="email"]::placeholder,
+      input[type="password"]::placeholder {
+        opacity: 0;
+      }
       /* /////////////////////////////////fonts//////////////////////////////////////////// */
 
       @font-face {
@@ -110,6 +110,11 @@
           font-size: 1vw;
           font-weight: 400;
         }
+      }
+
+      .heading,
+      .intro {
+        display: none;
       }
 
       .entry-item label {
@@ -165,15 +170,6 @@
         }
       }
 
-      .entry-item:has(input[type="password"]:not(:placeholder-shown))
-        > div
-        > label[for="password"],
-      .entry-item:has(input[type="password"]:focus)
-        > div
-        > label[for="password"] {
-        top: 4%;
-      }
-
       #forgotPassword {
         position: absolute;
         right: 0;
@@ -181,7 +177,9 @@
       }
 
       .error.itemLevel {
-        text-align: end;
+        position: absolute;
+        right: 0;
+        top: -36%;
       }
       .error.itemLevel > p {
         color: #eb001b !important;
@@ -190,6 +188,14 @@
       .rememberMe {
         text-align: start;
         margin-bottom: 2rem;
+      }
+
+      #next {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        background: #068fd3;
+        color: white;
       }
     </style>
 
