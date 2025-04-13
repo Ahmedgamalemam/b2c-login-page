@@ -42,7 +42,8 @@
         position: relative;
       }
 
-      input {
+      input[type="email"],
+      input[type="password"] {
         width: 100%;
         padding: 8px;
         border: none;
@@ -50,7 +51,8 @@
         background: #e8e8e899;
         margin-bottom: 1.5rem;
       }
-      input:focus {
+      input[type="email"]:focus,
+      input[type="password"]:focus {
         border: none;
         outline: none;
       }
@@ -108,7 +110,7 @@
         }
       }
 
-      .form-login-label {
+      label {
         position: absolute;
         font-size: 0.875rem;
         background-color: transparent;
@@ -127,8 +129,10 @@
         }
       }
 
-      input:valid + label,
-      input:focus + label {
+      input[type="text"]:valid ~ label,
+      input[type="password"]:valid ~ label,
+      input[type="text"]:focus ~ label,
+      input[type="password"]:focus ~ label {
         top: -25%;
         background: white;
         border: 1px solid #ededed;
