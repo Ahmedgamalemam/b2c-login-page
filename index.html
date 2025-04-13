@@ -135,15 +135,13 @@
         position: relative;
       }
 
-      .entry-item:has(input[type="text"]:valid) > label[for="email"],
       .entry-item:has(input[type="text"]:focus) > label[for="email"],
       .entry-item:has(input[type="text"]:not(:placeholder-shown))
         > label[for="email"],
       .entry-item:has(input[type="email"]:not(:placeholder-shown))
         > label[for="email"],
-      .entry-item:has(input[type="email"]:valid) > label[for="email"],
       .entry-item:has(input[type="email"]:focus) > label[for="email"],
-      .entry-item:has(input[type="password"]:valid)
+      .entry-item:has(input[type="password"]:not(:placeholder-shown))
         > div
         > label[for="password"],
       .entry-item:has(input[type="password"]:focus)
@@ -165,6 +163,33 @@
           height: 1rem;
           transition: all ease 0.3s;
         }
+      }
+
+      .entry-item:has(input[type="password"]:not(:placeholder-shown))
+        > div
+        > label[for="password"],
+      .entry-item:has(input[type="password"]:focus)
+        > div
+        > label[for="password"] {
+        top: 4%;
+      }
+
+      #forgotPassword {
+        position: absolute;
+        right: 0;
+        top: 71%;
+      }
+
+      .error.itemLevel {
+        text-align: end;
+      }
+      .error.itemLevel > p {
+        color: #eb001b !important;
+      }
+
+      .rememberMe {
+        text-align: start;
+        margin-bottom: 2rem;
       }
     </style>
 
