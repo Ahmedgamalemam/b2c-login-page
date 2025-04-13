@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Port Said</title>
+
+    <style>
+      body {
+        font-family: Nunito !important;
+        font-weight: 600 !important;
+        overflow-x: hidden;
+      }
+
+      button {
+        border: none;
+        font-family: Urbanist !important;
+      }
+
+      .back-color-EDF7FF {
+        background-color: #edf7ff !important;
+      }
+      .back-color-light {
+        background: white !important;
+      }
+
+      .color-blue-dark {
+        color: #242456 !important;
+      }
+      .back-blue-middle {
+        background: #068fd3 !important;
+      }
+      .color-white {
+        color: white !important;
+      }
+
+      .p-relative {
+        position: relative;
+      }
+
+      .form_input {
+        width: 100%;
+        padding: 8px;
+        border: none;
+        border-radius: 8px;
+        background: #e8e8e899;
+        margin-bottom: 1.5rem;
+      }
+      .form_input:focus {
+        border: none;
+        outline: none;
+      }
+
+      /* /////////////////////////////////fonts//////////////////////////////////////////// */
+
+      @font-face {
+        font-family: "Nunito";
+        src: url("fonts/NunitoSans_7pt_Condensed-Regular.ttf")
+          format("truetype");
+      }
+
+      @font-face {
+        font-family: "Urbanist";
+        src: url("fonts/Urbanist-Black.ttf") format("truetype");
+      }
+
+      /* ////////////////////////////////////////////////////////////////////// */
+
+      p {
+        margin: 0 !important;
+      }
+
+      .main-login {
+        height: 100vh;
+        padding: 0rem 9% 0;
+        gap: 3.5rem;
+      }
+
+      .main-login > img {
+        height: 85%;
+        width: 63.2%;
+      }
+
+      section:has(form) {
+        width: 32%;
+        padding: 2rem 1.5rem;
+      }
+      section:has(form) > img {
+        width: 64.5%;
+      }
+      section:has(form) > div {
+        text-align: center;
+        h3 {
+          font-size: 2vw;
+          font-weight: 700;
+          line-height: normal;
+        }
+
+        p {
+          color: #4b5059;
+          font-size: 1vw;
+          font-weight: 400;
+        }
+      }
+
+      .form-login-label {
+        position: absolute;
+        font-size: 0.875rem;
+        background-color: transparent;
+        top: 10%;
+        left: 3%;
+        transition: all ease 0.3s;
+
+        p {
+          font-size: 0.875rem;
+          transition: all ease 0.3s;
+        }
+        img {
+          width: 1.3rem;
+          height: 1.3rem;
+          transition: all ease 0.3s;
+        }
+      }
+
+      .form_input:valid + label,
+      .form_input:focus + label {
+        top: -25%;
+        background: white;
+        border: 1px solid #ededed;
+        padding: 0.2rem;
+        border-radius: 0.5rem;
+        transition: all ease 0.3s;
+
+        p {
+          font-size: 0.7rem;
+          transition: all ease 0.3s;
+        }
+        img {
+          width: 1rem;
+          height: 1rem;
+          transition: all ease 0.3s;
+        }
+      }
+    </style>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <main class="main-login d-flex align-items-center back-color-EDF7FF">
+      <img src="images/loginbackground.png" alt="login background" />
+
+      <section
+        class="d-flex flex-column align-items-center back-color-light rounded-3 p"
+      >
+        <img class="mb-3" src="images/AgencyLogo.png" alt="logo" />
+
+        <div class="mb-4">
+          <h3 class="color-blue-dark">Welcome</h3>
+          <p>Use Portsaid Tours credintials to continue</p>
+        </div>
+
+        <form id="api" class="w-100" method="post" autocomplete="off">
+          <div class="p-relative">
+            <input
+              id="username"
+              name="username"
+              type="text"
+              class="form_input back-color-EDF7FF"
+              required
+            />
+
+            <label
+              for="username"
+              class="form-login-label d-flex align-items-center"
+            >
+              <img src="images/username.png" alt="username image" />
+              <p>User name</p>
+            </label>
+          </div>
+
+          <div class="p-relative">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              class="form_input back-color-EDF7FF"
+              required
+            />
+
+            <label
+              for="password"
+              class="form-login-label d-flex align-items-center"
+            >
+              <img src="images/passwordimg.png" alt="password image" />
+              <p>Password</p>
+            </label>
+          </div>
+
+          <button
+            id="next"
+            type="submit"
+            class="w-100 back-blue-middle color-white p-2 rounded-3"
+          >
+            Login
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <!-- scripts -->
+
+    <script src="https://alcdn.msauth.net/lib/1.0.0/js/msal.js"></script>
+    <script>
+      // Required to initialize the page for Azure B2C
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof PageLoaded === "function") {
+          PageLoaded();
+        }
+      });
+    </script>
+  </body>
+</html>
