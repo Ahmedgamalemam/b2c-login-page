@@ -48,7 +48,7 @@
         padding: 8px;
         border: none;
         border-radius: 8px;
-        background: #e8e8e899;
+        background: #edf7ff;
         margin-bottom: 1.5rem;
       }
       input[type="email"]:focus,
@@ -129,10 +129,18 @@
         }
       }
 
-      input[type="text"]:valid ~ label,
-      input[type="password"]:valid ~ label,
-      input[type="text"]:focus ~ label,
-      input[type="password"]:focus ~ label {
+      .entry-item {
+        position: relative;
+      }
+
+      .entry-item:has(input[type="text"]:valid) > label[for="email"],
+      .entry-item:has(input[type="text"]:focus) > label[for="email"],
+      .entry-item:has(input[type="password"]:valid)
+        > div
+        > label[for="password"],
+      .entry-item:has(input[type="password"]:focus)
+        > div
+        > label[for="password"] {
         top: -25%;
         background: white;
         border: 1px solid #ededed;
