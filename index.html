@@ -333,7 +333,7 @@
       });
     </script>
 
-    <script>
+    <!-- <script>
       window.onload = function () {
         const images = [
           "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground.png",
@@ -352,6 +352,27 @@
           imgElement.style.transition = "background-image 1s ease-in-out";
         }, 3000);
       };
+    </script> -->
+
+    <script type="text/javascript">
+      function PageLoaded() {
+        const images = [
+          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground.png",
+          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground2.png",
+          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground3.png",
+        ];
+
+        const imgElement = document.getElementById("loginbackground");
+
+        let index = 0;
+
+        setInterval(() => {
+          index = (index + 1) % images.length;
+          imgElement.style.backgroundImage = `url(${images[index]})`;
+          imgElement.style.backgroundSize = "cover";
+          imgElement.style.transition = "background-image 1s ease-in-out";
+        }, 3000);
+      }
     </script>
   </body>
 </html>
