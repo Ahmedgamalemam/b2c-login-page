@@ -223,6 +223,27 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const images = [
+          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground.png",
+          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground2.png",
+          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground3.png",
+        ];
+
+        const imgElement = document.getElementById("loginbackground");
+
+        let index = 0;
+
+        setInterval(() => {
+          index = (index + 1) % images.length;
+          imgElement.style.backgroundImage = `url(${images[index]})`;
+          imgElement.style.backgroundSize = "cover";
+          imgElement.style.transition = "background-image 1s ease-in-out";
+        }, 3000);
+      });
+    </script>
   </head>
 
   <body>
@@ -354,26 +375,5 @@
         }, 3000);
       };
     </script> -->
-
-    <script type="text/javascript">
-      function PageLoaded() {
-        const images = [
-          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground.png",
-          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground2.png",
-          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground3.png",
-        ];
-
-        const imgElement = document.getElementById("loginbackground");
-
-        let index = 0;
-
-        setInterval(() => {
-          index = (index + 1) % images.length;
-          imgElement.style.backgroundImage = `url(${images[index]})`;
-          imgElement.style.backgroundSize = "cover";
-          imgElement.style.transition = "background-image 1s ease-in-out";
-        }, 3000);
-      }
-    </script>
   </body>
 </html>
