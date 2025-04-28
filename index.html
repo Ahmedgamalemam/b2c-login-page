@@ -6,6 +6,11 @@
 
     <title>Port Said</title>
 
+    <!-- <link rel="preload" href="/images/loginbackground.png" as="image" />
+    <link rel="preload" href="/images/loginbackground2.png" as="image" />
+    <link rel="preload" href="/images/loginbackground3.png" as="image" />
+    <link rel="preload" href="/images/loginbackground4.png" as="image" /> -->
+
     <style>
       body {
         font-family: Nunito !important;
@@ -215,6 +220,64 @@
         background: #068fd3;
         color: white;
       }
+
+      /* /////////////////////////////////////////////////////// */
+
+      .background-container {
+        position: relative;
+        width: 500px;
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        opacity: 0;
+        animation: fade ease 12s infinite;
+      }
+
+      .bg1 {
+        background-image: url("https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground4.png");
+        animation-delay: 0s;
+      }
+
+      .bg2 {
+        background-image: url("https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground.png");
+        animation-delay: 3s;
+      }
+
+      .bg3 {
+        background-image: url("https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground2.png");
+        animation-delay: 6s;
+      }
+
+      .bg4 {
+        background-image: url("https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground3.png");
+        animation-delay: 9s;
+      }
+
+      @keyframes fade {
+        0% {
+          opacity: 1;
+        }
+        20% {
+          opacity: 1;
+        }
+        25% {
+          opacity: 0;
+        }
+        95% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
     </style>
 
     <link
@@ -223,38 +286,16 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
-
-    <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", function () {
-        const images = [
-          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground.png",
-          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground2.png",
-          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground3.png",
-        ];
-
-        const imgElement = document.getElementById("loginbackground");
-
-        let index = 0;
-
-        setInterval(() => {
-          index = (index + 1) % images.length;
-          imgElement.style.backgroundImage = `url(${images[index]})`;
-          imgElement.style.backgroundSize = "cover";
-          imgElement.style.transition = "background-image 1s ease-in-out";
-        }, 3000);
-      });
-    </script>
   </head>
 
   <body>
     <main class="main-login d-flex align-items-center back-color-EDF7FF">
-      <div
-        id="loginbackground"
-        class="rounded-3"
-        style="
-          background-image: url(https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground.png);
-        "
-      ></div>
+      <div class="background-container rounded-3">
+        <div class="bg bg1"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <div class="bg bg4"></div>
+      </div>
 
       <section
         class="d-flex flex-column align-items-center back-color-light rounded-3 p"
@@ -354,26 +395,5 @@
         });
       });
     </script>
-
-    <!-- <script>
-      window.onload = function () {
-        const images = [
-          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground.png",
-          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground2.png",
-          "https://ahmedgamalemam.github.io/b2c-login-page/images/loginbackground3.png",
-        ];
-
-        const imgElement = document.getElementById("loginbackground");
-
-        let index = 0;
-
-        setInterval(() => {
-          index = (index + 1) % images.length;
-          imgElement.style.backgroundImage = `url(${images[index]})`;
-          imgElement.style.backgroundSize = "cover";
-          imgElement.style.transition = "background-image 1s ease-in-out";
-        }, 3000);
-      };
-    </script> -->
   </body>
 </html>
